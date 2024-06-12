@@ -3,13 +3,13 @@ package IKApp;
 import java.util.List;
 
 //takım lideri, personel listesi ve atanmış iş listesi içeren bir sınıf
-public class Departman {
+public class Department {
    private String teamLead;
    private List<String> employeeList;
    private List<String> jobList;
    private String departmentName;
 
-    public Departman(String teamLead, List<String> employeeList, List<String> jobList,String departmentName) {
+    public Department(String teamLead, List<String> employeeList, List<String> jobList, String departmentName) {
         this.teamLead = teamLead;
         this.employeeList = employeeList;
         this.jobList = jobList;
