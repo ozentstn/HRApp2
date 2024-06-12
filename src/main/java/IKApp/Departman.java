@@ -7,11 +7,21 @@ public class Departman {
    private String teamLead;
    private List<String> employeeList;
    private List<String> jobList;
+   private String departmentName;
 
-    public Departman(String teamLead, List<String> employeeList, List<String> jobList) {
+    public Departman(String teamLead, List<String> employeeList, List<String> jobList,String departmentName) {
         this.teamLead = teamLead;
         this.employeeList = employeeList;
         this.jobList = jobList;
+        this.departmentName=departmentName;
+    }
+
+    public String getDepartmentName() {
+        return departmentName;
+    }
+
+    public void setDepartmentName(String departmentName) {
+        this.departmentName = departmentName;
     }
 
     public String getTeamLead() {
@@ -64,7 +74,8 @@ public class Departman {
         String dpList= (
                 "Takim Lideri:" + teamLead +
                 ", Personel Listesi: " + employeeList +
-                ", İş Listesi: " + jobList);
+                ", İş Listesi: " + jobList+
+                ", Departman adı: " + departmentName);
         return dpList;
     }
 
