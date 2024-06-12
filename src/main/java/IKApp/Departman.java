@@ -4,14 +4,30 @@ import java.util.List;
 
 //takım lideri, personel listesi ve atanmış iş listesi içeren bir sınıf
 public class Departman {
-   private String takimLideri;
-   private List<String> personelList;
+   private String teamLead;
+   private List<String> employeeList;
    private List<String> jobList;
 
-    public Departman(String takimLideri, List<String> personelList, List<String> jobList) {
-        this.takimLideri = takimLideri;
-        this.personelList = personelList;
+    public Departman(String teamLead, List<String> employeeList, List<String> jobList) {
+        this.teamLead = teamLead;
+        this.employeeList = employeeList;
         this.jobList = jobList;
+    }
+
+    public String getTeamLead() {
+        return teamLead;
+    }
+
+    public void setTeamLead(String teamLead) {
+        this.teamLead = teamLead;
+    }
+
+    public List<String> getEmployeeList() {
+        return employeeList;
+    }
+
+    public void setEmployeeList(List<String> employeeList) {
+        this.employeeList = employeeList;
     }
 
     public List<String> getJobList() {
@@ -22,19 +38,34 @@ public class Departman {
         this.jobList = jobList;
     }
 
-    public List<String> getPersonelList() {
-        return personelList;
+    public void addEmployee(String string){
+        this.employeeList.add(string);
     }
 
-    public void setPersonelList(List<String> personelList) {
-        this.personelList = personelList;
+    public void deleteEmployee(String string) {
+        this.employeeList.remove(string);
     }
 
-    public String getTakimLideri() {
-        return takimLideri;
+    public void changeEmployee(String oldEmployee, String newEmployee) {
+        int i = this.employeeList.indexOf(oldEmployee);
+        if (i != -1) {
+            this.employeeList.set(i, newEmployee);
+        }
     }
 
-    public void setTakimLideri(String takimLideri) {
-        this.takimLideri = takimLideri;
+    public void addJob(String job){
+        this.jobList.add(job);
     }
+    public void deleteJob(String job){
+        this.jobList.remove(job);
+    }
+
+    public  String DepartmanList() {
+        String dpList= (
+                "Takim Lideri:" + teamLead +
+                ", Personel Listesi: " + employeeList +
+                ", İş Listesi: " + jobList);
+        return dpList;
+    }
+
 }
