@@ -6,7 +6,7 @@ import java.time.Period;
 import java.util.Date;
 
 //sınıfta da ad, soyad, doğum tarihi alanlarına sahip olmalı.
-public class Employee {
+ abstract class Employee {
     private String name;
     private String surname;
     private LocalDate birthDate;
@@ -48,18 +48,6 @@ public class Employee {
                 );
         return epList;
     }
+    public abstract int retiredTime();
 
-    //erkek ve kadın için emekli olma zamanını hesaplama
-    public int retiredTimeMale(){
-        int ageMale=65;
-        int currentAgeMale= Period.between(getBirthDate(), LocalDate.now()).getYears(); //getYear neden olmuyor?
-        int retiredAgeMale= ageMale - currentAgeMale;
-        return retiredAgeMale;
-    }
-    public int retiredTimeFemale(){
-        int ageFemale=60;
-        int currentAgeFemale= Period.between(getBirthDate(), LocalDate.now()).getYears(); //getYear neden olmuyor?
-        int retiredAgeFemale= ageFemale - currentAgeFemale;
-        return retiredAgeFemale;
-    }
 }
